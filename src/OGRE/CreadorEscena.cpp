@@ -17,11 +17,7 @@ CreadorEscena::~CreadorEscena() {
 }
 
 bool CreadorEscena::frameRenderingQueued(const Ogre::FrameEvent& evt) {
-	if(mWindow->isClosed()) {
-		return false;
-	}
-
-	if(mShutDown) {
+	if (!this->MyOgre::frameRenderingQueued(evt)) {
 		return false;
 	}
 
@@ -31,11 +27,6 @@ bool CreadorEscena::frameRenderingQueued(const Ogre::FrameEvent& evt) {
 		processQueue();
 	}
 	desbloquearMutex();
-
-	//Need to capture/update each device
-
-	mKeyboard->capture();
-	mMouse->capture();
 
 	return true;
 }

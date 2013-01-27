@@ -139,6 +139,7 @@ bool CameraController::frameRenderingQueued(const Ogre::FrameEvent& evt) {
 }
 
 void CameraController::injectKeyDown(const OIS::KeyEvent& evt) {
+	std::cout << mStyle;
 	if (mStyle == CS_FREELOOK) {
 		if (evt.key == OIS::KC_W || evt.key == OIS::KC_UP) mGoingForward = true;
 		else if (evt.key == OIS::KC_S || evt.key == OIS::KC_DOWN) mGoingBack = true;

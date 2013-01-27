@@ -184,13 +184,15 @@ bool MyOgre::createScene(void) {
 }
 
 bool MyOgre::frameRenderingQueued(const Ogre::FrameEvent& evt) {
-	if(mWindow->isClosed()) {
+	if (mWindow->isClosed()) {
 		return false;
 	}
 
-	if(mShutDown) {
+	if (mShutDown) {
 		return false;
 	}
+
+	mCameraMan->frameRenderingQueued(evt);
 
 	//Need to capture/update each device
 	mKeyboard->capture();
@@ -200,7 +202,6 @@ bool MyOgre::frameRenderingQueued(const Ogre::FrameEvent& evt) {
 }
 
 bool MyOgre::keyPressed( const OIS::KeyEvent &arg ) {
-
 	// cycle texture filtering mode
 	if (arg.key == OIS::KC_T) {
 		Ogre::String newVal;
@@ -218,7 +219,7 @@ bool MyOgre::keyPressed( const OIS::KeyEvent &arg ) {
 			tfo = Ogre::TFO_ANISOTROPIC;
 			aniso = 8;
 			break;
-		case 'A':
+		case 'N':
 			newVal = "None";
 			tfo = Ogre::TFO_NONE;
 			aniso = 1;
