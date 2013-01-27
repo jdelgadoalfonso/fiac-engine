@@ -1,0 +1,14 @@
+material cielo
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture clouds.jpg
+				scroll_anim 0.15 0
+			}
+		}
+	}
+}

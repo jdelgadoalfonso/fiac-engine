@@ -1,0 +1,24 @@
+AC_INIT([Ogre Space Tutorial],
+        [0.0.1],
+        [Mark Ivey zovirl@zovirl.com],
+        [Space])
+AM_CONFIG_HEADER(config.h)
+AM_INIT_AUTOMAKE([dist-bzip2])
+
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_LIBTOOL
+
+PKG_CHECK_MODULES(OGRE, OGRE >= 0.14.1,,AC_MSG_ERROR("OGRE not found!"))
+AM_CXXFLAGS="$AM_CXXFLAGS $OGRE_CFLAGS"
+AM_LDFLAGS="$AM_LDFLAGS $OGRE_LIBS"
+
+AC_SUBST(AM_CXXFLAGS, "$AM_CXXFLAGS")
+AC_SUBST(AM_LDFLAGS, "$AM_LDFLAGS")
+AC_SUBST(PKGDATADIR, "${datadir}/${PACKAGE}")
+
+AC_CONFIG_FILES([
+   Makefile
+])
+
+AC_OUTPUT

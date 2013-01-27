@@ -1,0 +1,42 @@
+AS = as
+
+CC = gcc
+
+CXX = g++
+
+ASFLAGS = 
+
+CCFLAGS = -O2 -Wall -fmessage-length=0
+
+CXXFLAGS = -O2 -std=c++0x -Wall -fmessage-length=0
+
+CLFLAGS = -fPIC
+
+LDFLAGS = -shared -Wl,-soname,libctest.so.1
+
+SRC = src/
+
+#OBJS = $(SRC)main/Prueba.o $(SRC)sockets/Socket.o $(SRC)sockets/SocketException.o $(SRC)sockets/ServerSocket.o $(SRC)sockets/ClientSocket.o $(SRC)threads/Thread.o $(SRC)threads/Mutex.o $(SRC)myThreads/MyThread.o $(SRC)OGRE/MyOgre.o $(SRC)v8/JavascriptC.o
+
+OBJS = $(SRC)main/Prueba.o $(SRC)sockets/Socket.o $(SRC)sockets/SocketException.o $(SRC)sockets/ServerSocket.o $(SRC)sockets/ClientSocket.o $(SRC)threads/Thread.o $(SRC)threads/Mutex.o $(SRC)myThreads/MyThread.o $(SRC)OGRE/aplicacionOgre.o $(SRC)OGRE/escenaSimple.o $(SRC)v8/JavascriptC.o
+
+LIBS = -lpthread -lOgreMain -lOIS -lv8
+
+TARGET = release/prueba
+
+%.o: %.s
+	$(AS) $(ASFLAGS) -o $@ $<
+
+%.o: %.c
+	$(CC) $(CCFLAGS) -c $< -o $@
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(TARGET): $(OBJS)
+	$(CXX) -o $(TARGET) $(OBJS) $(LIBS)
+
+all: $(TARGET)
+
+clean:
+	rm -f $(OBJS) $(TARGET)

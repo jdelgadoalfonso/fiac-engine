@@ -1,0 +1,54 @@
+obj/ServerSocket.o: src/sockets/ServerSocket.cpp src/sockets/ServerSocket.h \
+ src/sockets/Socket.h src/sockets/SocketException.h
+obj/Socket.o: src/sockets/Socket.cpp src/sockets/Socket.h
+obj/SocketException.o: src/sockets/SocketException.cpp \
+ src/sockets/SocketException.h
+obj/ClientSocket.o: src/sockets/ClientSocket.cpp src/sockets/ClientSocket.h \
+ src/sockets/Socket.h src/sockets/SocketException.h
+obj/Prueba.o: src/main/Prueba.cpp src/main/Prueba.h \
+ src/main/../sockets/ServerSocket.h src/main/../sockets/Socket.h \
+ src/main/../sockets/SocketException.h src/main/../threads/ThreadCJSR.h \
+ src/main/../threads/Thread.h src/main/../threads/Mutex.h \
+ src/main/../threads/../v8/JavascriptC.h \
+ src/main/../threads/../v8/../sockets/ServerSocket.h \
+ src/main/../threads/../v8/../OGRE/CreadorEscena.h \
+ src/main/../threads/../v8/../OGRE/MyOgre.h \
+ src/main/../threads/../v8/../OGRE/camera/CameraController.h \
+ src/main/../threads/../v8/../OGRE/enviroment/Terrain.h \
+ src/main/../threads/../v8/../OGRE/objetos/Entidades.h \
+ src/main/../threads/../v8/../OGRE/../threads/Mutex.h \
+ src/main/../threads/../sockets/ServerSocket.h \
+ src/main/../threads/../sockets/SocketException.h \
+ src/main/../threads/../OGRE/CreadorEscena.h src/main/../OGRE/MyOgre.h \
+ src/main/../OGRE/CreadorEscena.h
+obj/CameraController.o: src/OGRE/camera/CameraController.cpp \
+ src/OGRE/camera/CameraController.h
+obj/Terrain.o: src/OGRE/enviroment/Terrain.cpp src/OGRE/enviroment/Terrain.h
+obj/MyOgre.o: src/OGRE/MyOgre.cpp src/OGRE/MyOgre.h \
+ src/OGRE/camera/CameraController.h src/OGRE/enviroment/Terrain.h
+obj/Entidades.o: src/OGRE/objetos/Entidades.cpp src/OGRE/objetos/Entidades.h
+obj/CreadorEscena.o: src/OGRE/CreadorEscena.cpp src/OGRE/CreadorEscena.h \
+ src/OGRE/MyOgre.h src/OGRE/camera/CameraController.h \
+ src/OGRE/enviroment/Terrain.h src/OGRE/objetos/Entidades.h \
+ src/OGRE/../threads/Mutex.h
+obj/JavascriptC.o: src/v8/JavascriptC.cpp src/v8/JavascriptC.h \
+ src/v8/../sockets/ServerSocket.h src/v8/../sockets/Socket.h \
+ src/v8/../OGRE/CreadorEscena.h src/v8/../OGRE/MyOgre.h \
+ src/v8/../OGRE/camera/CameraController.h \
+ src/v8/../OGRE/enviroment/Terrain.h src/v8/../OGRE/objetos/Entidades.h \
+ src/v8/../OGRE/../threads/Mutex.h
+obj/ThreadCJSR.o: src/threads/ThreadCJSR.cpp src/threads/ThreadCJSR.h \
+ src/threads/Thread.h src/threads/Mutex.h src/threads/../v8/JavascriptC.h \
+ src/threads/../v8/../sockets/ServerSocket.h \
+ src/threads/../v8/../sockets/Socket.h \
+ src/threads/../v8/../OGRE/CreadorEscena.h \
+ src/threads/../v8/../OGRE/MyOgre.h \
+ src/threads/../v8/../OGRE/camera/CameraController.h \
+ src/threads/../v8/../OGRE/enviroment/Terrain.h \
+ src/threads/../v8/../OGRE/objetos/Entidades.h \
+ src/threads/../v8/../OGRE/../threads/Mutex.h \
+ src/threads/../sockets/ServerSocket.h \
+ src/threads/../sockets/SocketException.h \
+ src/threads/../OGRE/CreadorEscena.h
+obj/Thread.o: src/threads/Thread.cpp src/threads/Thread.h
+obj/Mutex.o: src/threads/Mutex.cpp src/threads/Mutex.h
